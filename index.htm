@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Mewes: A Mascot for Creativity</title>
+  <!-- If anyone is reading this, YES, I know the css and js should be their own files. I'll get to it eventually. -->
   <style>
     body {
       font-family: system-ui, sans-serif;
@@ -10,7 +11,46 @@
       margin: 0;
       padding: 2rem;
       background-image: url('images/background_seamless.png');
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
+    .carousel {
+      width: 500px;
+      text-align: center;
+    }
+
+    .carousel img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    margin-bottom: 10px;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  button {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background: #444;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  button:hover {
+    background: #666;
+  }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -22,39 +62,72 @@
       cursor: pointer;
     }
   </style>
+
+  <script>
+    // Replace these with your own image paths or URLs
+    const images = [
+      "images/Mewes_FlattenedSlides_01.png",
+      "images/Mewes_FlattenedSlides_02.png",
+      "images/Mewes_FlattenedSlides_03.png",
+      "images/Mewes_FlattenedSlides_04.png",
+      "images/Mewes_FlattenedSlides_05.png",
+      "images/Mewes_FlattenedSlides_06.png",
+      "images/Mewes_FlattenedSlides_07.png",
+      "images/Mewes_FlattenedSlides_08.png",
+      "images/Mewes_FlattenedSlides_09.png",
+      "images/Mewes_FlattenedSlides_10.png",
+      "images/Mewes_FlattenedSlides_11.png",
+      "images/Mewes_FlattenedSlides_12.png",
+      "images/Mewes_FlattenedSlides_13.png",
+      "images/Mewes_FlattenedSlides_14.png",
+      "images/Mewes_FlattenedSlides_15.png",
+      "images/Mewes_FlattenedSlides_16.png",
+      "images/Mewes_FlattenedSlides_17.png",
+      "images/Mewes_FlattenedSlides_18.png",
+      "images/Mewes_FlattenedSlides_19.png",
+      "images/Mewes_FlattenedSlides_20.png",
+      "images/Mewes_FlattenedSlides_21.png",
+      "images/Mewes_FlattenedSlides_22.png",
+      "images/Mewes_FlattenedSlides_23.png",
+      "images/Mewes_FlattenedSlides_24.png",
+      "images/Mewes_FlattenedSlides_25.png",
+      "images/Mewes_FlattenedSlides_26.png",
+      "images/Mewes_FlattenedSlides_27.png"
+    ];
+
+    let currentIndex = 0;
+    const imgEl = document.getElementById("carouselImage");
+
+    function showImage(index) {
+      imgEl.src = images[index];
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+
+    // Initialize
+    showImage(currentIndex);
+  </script>
+
 </head>
 <body>
   <h1>Mewes: A Mascot for Creativity</h1>
-  <div class="grid">
-    <img src="images/Mewes_FlattenedSlides_01.png">
-    <img src="images/Mewes_FlattenedSlides_02.png">
-    <img src="images/Mewes_FlattenedSlides_03.png">
-    <img src="images/Mewes_FlattenedSlides_04.png">
-    <img src="images/Mewes_FlattenedSlides_05.png">
-    <img src="images/Mewes_FlattenedSlides_06.png">
-    <img src="images/Mewes_FlattenedSlides_07.png">
-    <img src="images/Mewes_FlattenedSlides_08.png">
-    <img src="images/Mewes_FlattenedSlides_09.png">
-    <img src="images/Mewes_FlattenedSlides_10.png">
-    <img src="images/Mewes_FlattenedSlides_11.png">
-    <img src="images/Mewes_FlattenedSlides_12.png">
-    <img src="images/Mewes_FlattenedSlides_13.png">
-    <img src="images/Mewes_FlattenedSlides_14.png">
-    <img src="images/Mewes_FlattenedSlides_15.png">
-    <img src="images/Mewes_FlattenedSlides_16.png">
-    <img src="images/Mewes_FlattenedSlides_17.png">
-    <img src="images/Mewes_FlattenedSlides_18.png">
-    <img src="images/Mewes_FlattenedSlides_19.png">
-    <img src="images/Mewes_FlattenedSlides_20.png">
-    <img src="images/Mewes_FlattenedSlides_21.png">
-    <img src="images/Mewes_FlattenedSlides_22.png">
-    <img src="images/Mewes_FlattenedSlides_23.png">
-    <img src="images/Mewes_FlattenedSlides_24.png">
-    <img src="images/Mewes_FlattenedSlides_25.png">
-    <img src="images/Mewes_FlattenedSlides_26.png">
-    <img src="images/Mewes_FlattenedSlides_27.png">
+  <div class="carousel">
+    <img id="carouselImage" src="" alt="carousel image">
+    <div class="controls">
+      <button id="prevBtn">Back</button>
+      <button id="nextBtn">Next</button>
+    </div>
   </div>
-    <h1>Downloadable Resources</h1>
+
+  <h1>Downloadable Resources</h1>
   <div class="grid">
     <img src="images/Mewes_HandsOpen_Outline_Flat.png">
     <img src="images/Mewes_HandsOpen_Outline_Transparent.png">
