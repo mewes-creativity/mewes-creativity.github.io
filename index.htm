@@ -10,12 +10,15 @@
       color: #000;
       margin: 0;
       padding: 2rem;
+      max-width: 800px;
       background-image: url('images/background_seamless.png');
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
       height: 100vh;
     }
+
     .carousel {
       width: 500px;
       text-align: center;
@@ -62,6 +65,30 @@
       cursor: pointer;
     }
   </style>
+
+</head>
+<body>
+  
+  <h1>Mewes: A Mascot for Creativity</h1>
+  <div class="carousel">
+    <img id="carouselImage" src="" alt="carousel image">
+    <div class="controls">
+      <button id="prevBtn">Back</button>
+      <button id="nextBtn">Next</button>
+    </div>
+  </div>
+
+  <h1>Downloadable Resources</h1>
+  <div class="grid">
+    <img src="images/Mewes_HandsOpen_Outline_Flat.png">
+    <img src="images/Mewes_HandsOpen_Outline_Transparent.png">
+    <img src="images/Mewes_WithSignBlank_ColorCelShade_Flat.png">
+    <img src="images/Mewes_WithSignBlank_ColorCelShade_Transparent.png">
+    <img src="images/Mewes_WithSignBlank_Outline_Flat.png">
+    <img src="images/Mewes_WithSignBlank_Outline_Transparent.png">
+    <img src="images/Mewes_WithSignCreativity_ColorCelShade_Flat.png">
+    <img src="images/Mewes_WithSignCreativity_ColorCelShade_Transparent.png">
+  </div>
 
   <script>
     // Replace these with your own image paths or URLs
@@ -115,28 +142,6 @@
     // Initialize
     showImage(currentIndex);
   </script>
-
-</head>
-<body>
-  <h1>Mewes: A Mascot for Creativity</h1>
-  <div class="carousel">
-    <img id="carouselImage" src="" alt="carousel image">
-    <div class="controls">
-      <button id="prevBtn">Back</button>
-      <button id="nextBtn">Next</button>
-    </div>
-  </div>
-
-  <h1>Downloadable Resources</h1>
-  <div class="grid">
-    <img src="images/Mewes_HandsOpen_Outline_Flat.png">
-    <img src="images/Mewes_HandsOpen_Outline_Transparent.png">
-    <img src="images/Mewes_WithSignBlank_ColorCelShade_Flat.png">
-    <img src="images/Mewes_WithSignBlank_ColorCelShade_Transparent.png">
-    <img src="images/Mewes_WithSignBlank_Outline_Flat.png">
-    <img src="images/Mewes_WithSignBlank_Outline_Transparent.png">
-    <img src="images/Mewes_WithSignCreativity_ColorCelShade_Flat.png">
-    <img src="images/Mewes_WithSignCreativity_ColorCelShade_Transparent.png">
-  </div>
+  
 </body>
 </html>
