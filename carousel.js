@@ -16,7 +16,12 @@ fetch("data.json")
 
 function showSlide(index) {
   imgEl.src = slides[index].image;
-  textEl.value = slides[index].text;
+
+  if (Array.isArray(slides[index].text)) {
+    textEl.innerHTML = slides[index].text.join("<br>");
+  } else {
+    textEl.innerHTML = slides[index].text;
+  }
 }
 
 document.getElementById("nextBtn").addEventListener("click", () => {
