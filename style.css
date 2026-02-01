@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background-image: url('images/background_seamless.png');
+    color: #000;
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    width: 90%;
+    max-width: 800px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+h1,
+h2 {
+    margin: 20px 0;
+}
+
+.carousel {
+    text-align: center;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+#carouselText {
+    width: 100%;
+    height: 120px;
+    margin-top: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+    resize: none;
+    overflow-y: auto;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.gap {
+    height: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 10px;
+    margin: 20px 0;
+}
+
+.griditem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.gridimage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin-bottom: 0px;
+}
+  
+.griddesc {
+    margin-top: 4px;   /* space between image and text */
+    margin-bottom: 12px; /* space before next row */
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.colorbox {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #000;
+    flex-wrap: nowrap;
+}
+
+ul {
+    text-align: left;
+    margin: 20px auto;
+    padding-left: 20px;
+    max-width: 500px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 10px 5px;
+    border: 0px;
+    margin: 0px;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #666;
+}
