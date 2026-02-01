@@ -1,75 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mewes: A Mascot for Creativity</title>
-  <!-- If anyone is reading this, YES, I know the css and js should be their own files. I'll get to it eventually. -->
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      color: #000;
-      margin: 0;
-      padding: 2rem;
-      width: 100%;
-      height: 100%;
-      background-image: url('images/background_seamless.png');
-      justify-content: center;
-      align-items: center;
-      /*flex-wrap: wrap;
-      display: flex;*/
-    }
+<meta charset="UTF-8">
+<title>Mewes: A Mascot for Creativity</title>
+<!-- If anyone is reading this, YES, I know the css and js should be their own files. I'll get to it eventually. -->
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background-image: url('images/background_seamless.png');
+    color: #000;
+    display: flex;
+    justify-content: center;
+    /*
+    align-items: center;
+    flex-wrap: wrap;
+    */
+  }
 
-    .carousel {
-      width: 500px;
-      text-align: center;
-    }
+  .page {
+    width: 90%;
+    max-width: 800px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
 
-    .carousel img {
+  h1, h2 {
+    margin: 20px 0;
+  }
+
+  .carousel {
+    /*width: 500px;*/
+    text-align: center;
+  }
+
+  .carousel img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-    margin-bottom: 10px;
+    display: block;
   }
 
   .controls {
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    margin-top: 10px;
   }
 
   button {
     flex: 1;
     padding: 10px;
     font-size: 1rem;
-    border: none;
-    border-radius: 6px;
-    background: #444;
-    color: #fff;
-    cursor: pointer;
-    transition: background 0.2s ease;
   }
 
-  button:hover {
-    background: #666;
+  .gap {
+    height: 40px;
   }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    img {
-      width: 100%;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-  </style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+  }
 
+  .gridimage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .colorlabel {
+    /*flex-wrap: nowrap;*/
+  }
+
+  .colorbox {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #000;
+    flex-wrap: nowrap;
+  }
+
+  ul {
+    text-align: left;
+    margin: 20px auto;
+    padding-left: 20px;
+    max-width: 500px;
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 10px 5px;
+    border: 0px;
+    margin: 0px;
+  }
+
+  footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+</style>
 </head>
 <body>
-  
+
+<div class="page">
+
   <h1>Mewes: A Mascot for Creativity</h1>
+
   <div class="carousel">
     <img id="carouselImage" src="" alt="carousel image">
     <div class="controls">
@@ -78,70 +117,165 @@
     </div>
   </div>
 
-  <h1>Downloadable Resources</h1>
+  <div class="gap"></div>
+
+  <h2>Downloadable Resources</h2>
+
   <div class="grid">
-    <img src="images/Mewes_HandsOpen_Outline_Flat.png">
-    <img src="images/Mewes_HandsOpen_Outline_Transparent.png">
-    <img src="images/Mewes_WithSignBlank_ColorCelShade_Flat.png">
-    <img src="images/Mewes_WithSignBlank_ColorCelShade_Transparent.png">
-    <img src="images/Mewes_WithSignBlank_Outline_Flat.png">
-    <img src="images/Mewes_WithSignBlank_Outline_Transparent.png">
-    <img src="images/Mewes_WithSignCreativity_ColorCelShade_Flat.png">
-    <img src="images/Mewes_WithSignCreativity_ColorCelShade_Transparent.png">
+    <img class="gridimage" src="images/Mewes_HandsOpen_Outline_Flat.png">
+    <img class="gridimage" src="images/Mewes_HandsOpen_Outline_Transparent.png">
+    <img class="gridimage" src="images/Mewes_HandsGrip_Outline_Flat.png">
+    <img class="gridimage" src="images/Mewes_HandsGrip_Outline_Transparent.png">
+    <img class="gridimage" src="images/Mewes_WithSignBlank_ColorCelShade_Flat.png">
+    <img class="gridimage" src="images/Mewes_WithSignBlank_ColorCelShade_Transparent.png">
+    <img class="gridimage" src="images/Mewes_WithSignBlank_Outline_Flat.png">
+    <img class="gridimage" src="images/Mewes_WithSignBlank_Outline_Transparent.png">
+    <img class="gridimage" src="images/Mewes_WithSignCreativity_ColorCelShade_Flat.png">
+    <img class="gridimage" src="images/Mewes_WithSignCreativity_ColorCelShade_Transparent.png">
   </div>
 
-  <script>
-    // Replace these with your own image paths or URLs
-    const images = [
-      "images/Mewes_FlattenedSlides_01.png",
-      "images/Mewes_FlattenedSlides_02.png",
-      "images/Mewes_FlattenedSlides_03.png",
-      "images/Mewes_FlattenedSlides_04.png",
-      "images/Mewes_FlattenedSlides_05.png",
-      "images/Mewes_FlattenedSlides_06.png",
-      "images/Mewes_FlattenedSlides_07.png",
-      "images/Mewes_FlattenedSlides_08.png",
-      "images/Mewes_FlattenedSlides_09.png",
-      "images/Mewes_FlattenedSlides_10.png",
-      "images/Mewes_FlattenedSlides_11.png",
-      "images/Mewes_FlattenedSlides_12.png",
-      "images/Mewes_FlattenedSlides_13.png",
-      "images/Mewes_FlattenedSlides_14.png",
-      "images/Mewes_FlattenedSlides_15.png",
-      "images/Mewes_FlattenedSlides_16.png",
-      "images/Mewes_FlattenedSlides_17.png",
-      "images/Mewes_FlattenedSlides_18.png",
-      "images/Mewes_FlattenedSlides_19.png",
-      "images/Mewes_FlattenedSlides_20.png",
-      "images/Mewes_FlattenedSlides_21.png",
-      "images/Mewes_FlattenedSlides_22.png",
-      "images/Mewes_FlattenedSlides_23.png",
-      "images/Mewes_FlattenedSlides_24.png",
-      "images/Mewes_FlattenedSlides_25.png",
-      "images/Mewes_FlattenedSlides_26.png",
-      "images/Mewes_FlattenedSlides_27.png"
-    ];
+  <div class="gap"></div>
 
-    let currentIndex = 0;
-    const imgEl = document.getElementById("carouselImage");
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <table>
+        <tr>
+            <td>Darker Fur:</td>
+            <td>#868175</td>
+            <td><div class="colorbox" style="background-color: #868175;"></div></td>
+            <td>|</td>
+            <td>Shadow:</td>
+            <td>#4a433b</td>
+            <td><div class="colorbox" style="background-color: #4a433b;"></div></td>
+        </tr>
+        <tr>
+            <td>Lighter Fur:</td>
+            <td>#cdc5b3</td>
+            <td><div class="colorbox" style="background-color: #cdc5b3;"></div></td>
+            <td>|</td>
+            <td>Shadow:</td>
+            <td>#b4a88d</td>
+            <td><div class="colorbox" style="background-color: #b4a88d;"></div></td>
+        </tr>
+        <tr>
+            <td>Flesh:</td>
+            <td>#eed0c9</td>
+            <td><div class="colorbox" style="background-color: #eed0c9;"></div></td>
+            <td>|</td>
+            <td>Shadow:</td>
+            <td>#e5b8ae</td>
+            <td><div class="colorbox" style="background-color: #e5b8ae;"></div></td>
+        </tr>
+        <tr>
+            <td>Lettering:</td>
+            <td>#0075d0</td>
+            <td><div class="colorbox" style="background-color: #0075d0;"></div></td>
+            <td>|</td>
+            <td>Shadow:</td>
+            <td>#0075d0</td>
+            <td><div class="colorbox" style="background-color: #0075d0;"></div></td>
+        </tr>
+        <tr>
+            <td>Heart:</td>
+            <td>#d40000</td>
+            <td><div class="colorbox" style="background-color: #d40000;"></div></td>
+            <td>|</td>
+            <td>Shadow:</td>
+            <td>#d40000</td>
+            <td><div class="colorbox" style="background-color: #d40000;"></div></td>
+        </tr>
+        <tr>
+            <td>Sign, Eyes, Teeth:</td>
+            <td>#ffffff</td>
+            <td><div class="colorbox" style="background-color: #ffffff;"></div></td>
+            <td>|</td>
+            <td>Shadow:</td>
+            <td>#cccccc</td>
+            <td><div class="colorbox" style="background-color: #cccccc;"></div></td>
+        </tr>
+    </table>
+  </div>
 
-    function showImage(index) {
-      imgEl.src = images[index];
-    }
+  <div class="gap"></div>
 
-    document.getElementById("nextBtn").addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % images.length;
-      showImage(currentIndex);
-    });
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <table>
+        <tr>
+            <td>Adobe Photoshop (coming soon)</td>
+            <td>Download .PSD</td>
+        </tr>
+        <tr>
+            <td>Adobe Illustrator (coming soon)</td>
+            <td>Download .AI</td>
+        </tr>
+        <tr>
+            <td>Blender (coming later)</td>
+            <td>Download .BLEND</td>
+        </tr>
+        <tr>
+            <td>Aseprite (coming later)</td>
+            <td>Download .ASEPRITE</td>
+        </tr>
+    </table>
+  </div>
 
-    document.getElementById("prevBtn").addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      showImage(currentIndex);
-    });
+  <div class="gap"></div>
 
-    // Initialize
+  <footer>
+    Untitled by Anonymous is marked CC0 1.0. To view a copy of this mark, visit <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>
+  </footer>
+
+</div>
+
+<script>
+  const images = [
+    "images/Mewes_FlattenedSlides_01.png",
+    "images/Mewes_FlattenedSlides_02.png",
+    "images/Mewes_FlattenedSlides_03.png",
+    "images/Mewes_FlattenedSlides_04.png",
+    "images/Mewes_FlattenedSlides_05.png",
+    "images/Mewes_FlattenedSlides_06.png",
+    "images/Mewes_FlattenedSlides_07.png",
+    "images/Mewes_FlattenedSlides_08.png",
+    "images/Mewes_FlattenedSlides_09.png",
+    "images/Mewes_FlattenedSlides_10.png",
+    "images/Mewes_FlattenedSlides_11.png",
+    "images/Mewes_FlattenedSlides_12.png",
+    "images/Mewes_FlattenedSlides_13.png",
+    "images/Mewes_FlattenedSlides_14.png",
+    "images/Mewes_FlattenedSlides_15.png",
+    "images/Mewes_FlattenedSlides_16.png",
+    "images/Mewes_FlattenedSlides_17.png",
+    "images/Mewes_FlattenedSlides_18.png",
+    "images/Mewes_FlattenedSlides_19.png",
+    "images/Mewes_FlattenedSlides_20.png",
+    "images/Mewes_FlattenedSlides_21.png",
+    "images/Mewes_FlattenedSlides_22.png",
+    "images/Mewes_FlattenedSlides_23.png",
+    "images/Mewes_FlattenedSlides_24.png",
+    "images/Mewes_FlattenedSlides_25.png",
+    "images/Mewes_FlattenedSlides_26.png",
+    "images/Mewes_FlattenedSlides_27.png"
+  ];
+
+  let currentIndex = 0;
+  const imgEl = document.getElementById("carouselImage");
+
+  function showImage(index) {
+    imgEl.src = images[index];
+  }
+
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
     showImage(currentIndex);
-  </script>
-  
+  });
+
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  showImage(currentIndex);
+</script>
+
 </body>
 </html>
