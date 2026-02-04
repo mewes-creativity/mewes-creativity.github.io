@@ -65,6 +65,13 @@ button {
     margin: 20px 0;
 }
 
+.grid2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px 10px;
+    margin: 20px 0;
+}
+
 .griditem {
     display: flex;
     flex-direction: column;
@@ -81,6 +88,13 @@ button {
 .griddesc {
     margin-top: 4px;   /* space between image and text */
     margin-bottom: 12px; /* space before next row */
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.gridtext {
+    margin-top: 4px;   /* space between image and text */
+    margin-bottom: 4px; /* space before next row */
     font-size: 0.9rem;
     line-height: 1.2;
 }
